@@ -1,0 +1,24 @@
+%head
+  %title MovieLovers
+  %link{:href => "style.css", :rel => "stylesheet", :type => "text/css"}/
+%body
+  .container
+    %header
+      %h1
+        MovieLovers
+
+    %p
+      Which movie was released in
+      #{@rand_year}?
+
+    %ul
+    - @@list.with_posters.each do |i|
+      %li
+        %h3== #{i[:title]}
+        %p== #{i[:year]}
+        - if i[:year] = @rand_year
+          %img{:onclick => "alert('Yay!!!')>\r\n\r\n", :src => "#{i[:poster]}", :width => "100px"}
+          %a{:onclick => "alert('Yay!!!')>\r\n\r\n", :id => "#{i[:title]}", :href => "#"}This one
+        -else
+          %img{:onclick => "alert('Nay...')>\r\n\r\n", :src => "#{i[:poster]}", :width => "100px"}
+          %a{:onclick => "alert('Yay!!!')>\r\n\r\n",:id => "#{i[:title]}", :href => "#"}This one

@@ -1,0 +1,38 @@
+.container{
+  width: 1000px;
+  margin: auto;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  width: 100px;
+  display: block;
+  float: left;
+  margin-right: 10px;
+}
+
+li h3{
+  display: block;
+  height: 100px;
+}
+
+li a {
+    display: block;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #e74c3c;
+    border-radius: 5px;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+li a:hover{
+  background-color: #c0392b;
+}

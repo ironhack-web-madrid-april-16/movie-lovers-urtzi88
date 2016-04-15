@@ -1,0 +1,12 @@
+%head
+  %title MovieLovers
+%body
+  %header
+    %h1
+      MovieLovers
+
+  %p Write a word to search titles including that word on IMDB
+
+  %form{:action => "/movies", :method => "post"}
+    %input{:type => "text", name: "word", placeholder: "Word to search"}/
+    %input{:type => "submit", :value => "Sumbit"}
