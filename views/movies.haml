@@ -9,16 +9,28 @@
 
     %p
       Which movie was released in
-      #{@rand_year}?
+      %strong#year==#{@rand_year}
+      ?
+
 
     %ul
     - @@list.with_posters.each do |i|
       %li
         %h3== #{i[:title]}
         %p== #{i[:year]}
-        - if i[:year] = @rand_year
-          %img{:onclick => "alert('Yay!!!')>\r\n\r\n", :src => "#{i[:poster]}", :width => "100px"}
-          %a{:onclick => "alert('Yay!!!')>\r\n\r\n", :id => "#{i[:title]}", :href => "#"}This one
-        -else
-          %img{:onclick => "alert('Nay...')>\r\n\r\n", :src => "#{i[:poster]}", :width => "100px"}
-          %a{:onclick => "alert('Yay!!!')>\r\n\r\n",:id => "#{i[:title]}", :href => "#"}This one
+        %img{:src => "#{i[:poster]}", :width => "100px"}
+        %a{:class => "button", :id => "#{i[:year]}", :href => "#"}This one
+
+
+    :javascript
+      var buttons = document.getElementsByClassName('button');
+      for(var i = 0; i < buttons.length; i++){
+      	buttons[i].addEventListener("click", function(){
+      		var this_button = this.id;
+      		if(this_button == document.getElementById("year").innerText){
+      			alert('YAY!')
+      		} else {
+            alert("Nope...")
+          }
+      	});
+      }
