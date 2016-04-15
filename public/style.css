@@ -18,7 +18,8 @@ li{
 
 li h3{
   display: block;
-  height: 100px;
+  height: 40px;
+  overflow: hidden;
 }
 
 li a {
@@ -35,4 +36,22 @@ li a {
 
 li a:hover{
   background-color: #c0392b;
+}
+
+li img{
+  height: 150px;
+}
+
+header {
+    text-align: center;
+    display: block;
+    height: 100px;
+    line-height: 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    background-color: #c0392b;
+    padding: 1px;
+    margin-top: -8px;
+    color: #ecf0f1;
 }
